@@ -1,0 +1,36 @@
+@media all and (max-width: 560px) {
+    #main-searchbar {
+        display: flex;
+    }
+
+    #main-searchbar input::placeholder {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    #main-searchbar button {
+        background-color: var(--color-tertiary);
+        border-radius: 5px;
+        position: initial;
+        width: 2rem;
+        margin-left: .5rem;
+    }
+
+    #tags {
+        display: none;
+    }
+
+    #research-selections {
+        display: none;
+    }
+
+    #section-results {
+        margin-top: 2rem;
+        gap: 2rem;
+    }
+
+    figure {
+        width: 100%;
+    }
+}
