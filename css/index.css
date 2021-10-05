@@ -1,0 +1,234 @@
+/* colors variables--------------------------------------------------------------------------*/
+:root {
+    --color-primary: #ED6454;
+    --color-secondary: #3282F7;
+    --color-tertiary: #68D9A4;
+
+    --background-grey: #C7BEBE;
+    --background-grey--lighter: #E7E7E7;
+}
+
+/* base ---------------------------------------------------------------------------*/
+* {
+    box-sizing: border-box !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 1500px;
+    margin: auto;
+    padding: 0;
+    font-family: "DM Sans", sans-serif;
+    position: relative;
+}
+
+main {
+    margin: 2rem;
+    padding: 0;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+summary {
+    display: block;
+}
+
+/* header ---------------------------------------------------------------------------*/
+header {
+    margin-top: 2rem;
+}
+
+#logo {
+    margin: 0 50%;
+    transform: translateX(-50%);
+
+    height: 46px;
+    width: 50px;
+}
+
+h1 {
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+}
+
+/* section-sort ---------------------------------------------------------------------------*/
+#main-searchbar {
+    position: relative;
+}
+
+#main-searchbar input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: var(--background-grey--lighter);
+}
+
+#main-searchbar button {
+    position: absolute;
+    top: .8rem;
+    right: .8rem;
+}
+
+#main-searchbar button img {
+    width: 1.5rem;
+}
+
+/* tags */
+#tags {
+    margin-top: 1.5rem;
+}
+
+.tag {
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    padding: .2rem .5rem;
+    border-radius: 5px;
+    margin-right: .5rem;
+    position: relative;
+}
+
+.tag button img {
+    width: .8rem;
+    position: absolute;
+    top: .3rem;
+    right: .4rem;
+}
+
+/* lists */
+#research-selections {
+    display: flex;
+    margin-top: 2.5rem;
+}
+
+.research-list {
+    position: relative;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+
+.research-list summary {
+    color: white;
+    font-weight: 500;
+}
+
+.research-list summary img {
+    margin-left: 1rem;
+}
+
+.research-list input {
+    border-radius: 5px 5px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    margin-right: 1rem;
+    color: white;
+}
+
+.research-list ul {
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0 0 5px 5px;
+    color: white;
+    font-weight: 500;
+}
+
+.research-list ul li {
+    padding-bottom: .3rem;
+}
+
+.tag-ingredients,
+#list-ingredients,
+#list-ingredients input,
+#list-ingredients ul {
+    background-color: var(--color-secondary);
+}
+
+.tag-device,
+#list-device,
+#list-device input,
+#list-device ul {
+    background-color: var(--color-tertiary);
+}
+
+.tag-utensils,
+#list-utensils,
+#list-utensils input,
+#list-utensils ul {
+    background-color: var(--color-primary);
+}
+
+
+
+/* Section-results ---------------------------------------------------------------------------*/
+#section-results {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+figure {
+    background-color: var(--background-grey);
+    width: calc((100% / 3) - (100px / 3));
+    height: 364px;
+    border-radius: 5px;
+}
+
+.recipe-illustration {
+    height: 178px;
+}
+
+figcaption {
+    background-color: var(--background-grey--lighter);
+    height: 186px;
+    border-radius: 0 0 5px 5px;
+    padding: 1.5rem 1rem 1rem 1rem;
+}
+
+.recipe-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recipe-time img {
+    height: .8rem;
+    margin-right: .5rem;
+}
+
+.recipe-content {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.recipe-ingredients {
+    line-height: .9rem;
+    font-size: 12px;
+    max-width: 150px;
+    margin-right: 2rem;
+}
+
+.recipe-instructions {
+    line-height: .9rem;
+    font-size: 12px;
+    max-width: 160px;
+    white-space: normal;
+    /* white-space: nowrap; */
+    /* ellipsis seem to work only with nowrap ??? */
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

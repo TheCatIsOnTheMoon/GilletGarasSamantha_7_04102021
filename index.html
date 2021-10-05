@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
-    <!-- <link rel="stylesheet" href="css/mediaqueries.css" /> -->
+    <link rel="stylesheet" href="css/mediaqueries.css" />
 
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
@@ -35,8 +35,8 @@
 
             <form id="form" action="">
                 <div id="main-searchbar">
-                    <input type="text" id="main-research-input" name="main-research-input" minlength="3" maxlength="20" size="10"
-                        placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette">
+                    <input type="text" id="main-research-input" name="main-research-input" minlength="3" maxlength="20"
+                        size="10" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette">
                     <button><img src="img/search.svg" alt="magnifying glass svg"></button>
                 </div>
 
@@ -54,21 +54,50 @@
                 </div>
 
                 <div id="research-selections">
-                    <span class="research-list" id="list-ingredients">
-                        <input type="text" id="ingredients-research-input" name="ingredients-research-input" minlength="3" maxlength="20" size="5"
-                        placeholder="Ingredients">
-                        <button><img src="img/arrow_down.svg" alt=""></button>
-                    </span>
-                    <span class="research-list" id="list-device">
-                        <input type="text" id="device-research-input" name="device-research-input" minlength="3" maxlength="20" size="5"
-                        placeholder="Appareil">
-                        <button><img src="img/arrow_down.svg" alt=""></button>
-                    </span>
-                    <span class="research-list" id="list-utensils">
-                        <input type="text" id="utensils-research-input" name="utensils-research-input" minlength="3" maxlength="20" size="5"
-                        placeholder="Ustensiles">
-                        <button><img src="img/arrow_down.svg" alt=""></button>
-                    </span>
+                    <details class="research-list" id="list-ingredients">
+                        <summary>
+                            Ingredients
+                            <img src="img/arrow_down.svg" alt="">
+                        </summary>
+                        <ul>
+                            <li>sdfaef </li>
+                            <li>zgzdg</li>
+                            <li>zrgzdrg</li>
+                            <li>zrgdzrg</li>
+                            <li>zrgzrdg</li>
+                            <li>zrgzdrg</li>
+                        </ul>
+                    </details>
+
+                    <details class="research-list" id="list-device">
+                        <summary>
+                            Appareil
+                            <img src="img/arrow_down.svg" alt="">
+                        </summary>
+                        <ul>
+                            <li>sdfaef </li>
+                            <li>FEFEFzgzdg</li>
+                            <li>zxfghfdxhrg</li>
+                            <li>zrgdzrg</li>
+                            <li>zrgxhtttfhdg</li>
+                            <li>zrgzdrg</li>
+                        </ul>
+                    </details>
+
+                    <details class="research-list" id="list-utensils">
+                        <summary>
+                            Ustensiles
+                            <img src="img/arrow_down.svg" alt="">
+                        </summary>
+                        <ul>
+                            <li>sdfxhttxhaef </li>
+                            <li>xthtfxdg</li>
+                            <li>zrgzdrg</li>
+                            <li>zrgdzrg</li>
+                            <li>zrxthxgzrdg</li>
+                            <li>zrghzthdzdrg</li>
+                        </ul>
+                    </details>
                 </div>
 
             </form>
@@ -76,151 +105,11 @@
 
 
         <section id="section-results">
-
-            <figure>
-                <div class="recipe-illustration"></div>
-                <figcaption>
-                    <div class="recipe-header">
-                        <h2 class="recipe-title">Limonade de Coco</h2>
-                        <div class="recipe-time"><img src="img/clock.svg" alt="">10 min</div>
-                    </div>
-                    <div class="recipe-content">
-                        <div class="recipe-ingredients">
-                            Lait de coco: 400ml <br>
-                            Jus de citron: 2 <br>
-                            Créme de coco: 4 cuillères <br>
-                            Sucre: 20g <br>
-                            Glaçons: 2</div>
-                        <div class="recipe-instructions">
-                            Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus
-                            de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée
-                        </div>
-                    </div>
-
-                </figcaption>
-            </figure>
-
-            <figure>
-                <div class="recipe-illustration"></div>
-                <figcaption>
-                    <div class="recipe-header">
-                        <h2 class="recipe-title">Limonade de Coco</h2>
-                        <div class="recipe-time"><img src="img/clock.svg" alt="">10 min</div>
-                    </div>
-                    <div class="recipe-content">
-                        <div class="recipe-ingredients">
-                            Lait de coco: 400ml <br>
-                            Jus de citron: 2 <br>
-                            Créme de coco: 4 cuillères <br>
-                            Sucre: 20g <br>
-                            Glaçons: 2</div>
-                        <div class="recipe-instructions">
-                            Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus
-                            de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée
-                        </div>
-                    </div>
-
-                </figcaption>
-            </figure>
-
-            <figure>
-                <div class="recipe-illustration"></div>
-                <figcaption>
-                    <div class="recipe-header">
-                        <h2 class="recipe-title">Limonade de Coco</h2>
-                        <div class="recipe-time"><img src="img/clock.svg" alt="">10 min</div>
-                    </div>
-                    <div class="recipe-content">
-                        <div class="recipe-ingredients">
-                            Lait de coco: 400ml <br>
-                            Jus de citron: 2 <br>
-                            Créme de coco: 4 cuillères <br>
-                            Sucre: 20g <br>
-                            Glaçons: 2</div>
-                        <div class="recipe-instructions">
-                            Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus
-                            de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée
-                        </div>
-                    </div>
-
-                </figcaption>
-            </figure>
-
-            <figure>
-                <div class="recipe-illustration"></div>
-                <figcaption>
-                    <div class="recipe-header">
-                        <h2 class="recipe-title">Limonade de Coco</h2>
-                        <div class="recipe-time"><img src="img/clock.svg" alt="">10 min</div>
-                    </div>
-                    <div class="recipe-content">
-                        <div class="recipe-ingredients">
-                            Lait de coco: 400ml <br>
-                            Jus de citron: 2 <br>
-                            Créme de coco: 4 cuillères <br>
-                            Sucre: 20g <br>
-                            Glaçons: 2</div>
-                        <div class="recipe-instructions">
-                            Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus
-                            de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée
-                        </div>
-                    </div>
-
-                </figcaption>
-            </figure>
-
-            <figure>
-                <div class="recipe-illustration"></div>
-                <figcaption>
-                    <div class="recipe-header">
-                        <h2 class="recipe-title">Limonade de Coco</h2>
-                        <div class="recipe-time"><img src="img/clock.svg" alt="">10 min</div>
-                    </div>
-                    <div class="recipe-content">
-                        <div class="recipe-ingredients">
-                            Lait de coco: 400ml <br>
-                            Jus de citron: 2 <br>
-                            Créme de coco: 4 cuillères <br>
-                            Sucre: 20g <br>
-                            Glaçons: 2</div>
-                        <div class="recipe-instructions">
-                            Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus
-                            de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée
-                        </div>
-                    </div>
-
-                </figcaption>
-            </figure>
-
-            <figure>
-                <div class="recipe-illustration"></div>
-                <figcaption>
-                    <div class="recipe-header">
-                        <h2 class="recipe-title">Limonade de Coco</h2>
-                        <div class="recipe-time"><img src="img/clock.svg" alt="">10 min</div>
-                    </div>
-                    <div class="recipe-content">
-                        <div class="recipe-ingredients">
-                            Lait de coco: 400ml <br>
-                            Jus de citron: 2 <br>
-                            Créme de coco: 4 cuillères <br>
-                            Sucre: 20g <br>
-                            Glaçons: 2</div>
-                        <div class="recipe-instructions">
-                            Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus
-                            de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée
-                        </div>
-                    </div>
-
-                </figcaption>
-            </figure>
-
         </section>
-
 
     </main>
 
-    <!-- <script type="module" src="script.js"></script> -->
+    <script type="module" src="script.js"></script>
 
 </body>
 
