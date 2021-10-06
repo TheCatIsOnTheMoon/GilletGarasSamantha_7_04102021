@@ -26,12 +26,12 @@
 <body>
 
     <header>
-        <img src="img/logo.svg" id="logo" alt="Logo Les petits plats">
+        <img src="img/logo.svg" id="logo" alt="logo Les petits plats">
         <h1>Les petits plats</h1>
     </header>
 
     <main>
-        <section id="section-sort">
+        <section>
 
             <form id="form" action="">
                 <div id="main-searchbar">
@@ -41,76 +41,63 @@
                 </div>
 
 
-                <div id="tags">
-                    <span class="tag tag-ingredients">Coco
+                <div id="tag-section">
+                    <span class="tag tag-ingredients secondary-color">Coco
                         <button><img src="img/delete.svg" alt="delete svg"></button>
                     </span>
-                    <span class="tag tag-device">Cocojkhsdghuwgfuawgf
+                    <span class="tag tag-appliance tertiary-color">Four
                         <button><img src="img/delete.svg" alt="delete svg"></button>
                     </span>
-                    <span class="tag tag-utensils">sdjfgifsk
+                    <span class="tag tag-ustensils primary-color">Fouet
                         <button><img src="img/delete.svg" alt="delete svg"></button>
                     </span>
                 </div>
 
                 <div id="research-selections">
-                    <details class="research-list" id="list-ingredients">
+                    <details class="research-list secondary-color">
                         <summary>
                             Ingredients
-                            <img src="img/arrow_down.svg" alt="">
+                            <img src="img/arrow_down.svg" alt="arrow down svg">
                         </summary>
-                        <ul>
-                            <li>sdfaef </li>
-                            <li>zgzdg</li>
-                            <li>zrgzdrg</li>
-                            <li>zrgdzrg</li>
-                            <li>zrgzrdg</li>
-                            <li>zrgzdrg</li>
-                        </ul>
+                        <div>
+                            <input type="text" class="research-list-input secondary-color" id="ingredients-research-input" name="main-research-input" minlength="3" maxlength="20"
+                                size="10" placeholder="Rechercher un ingrédient">
+                            <ul class="secondary-color" id="list-ingredients"></ul>
+                        </div>
                     </details>
 
-                    <details class="research-list" id="list-device">
+                    <details class="research-list tertiary-color">
                         <summary>
                             Appareil
-                            <img src="img/arrow_down.svg" alt="">
+                            <img src="img/arrow_down.svg" alt="arrow down svg">
                         </summary>
-                        <ul>
-                            <li>sdfaef </li>
-                            <li>FEFEFzgzdg</li>
-                            <li>zxfghfdxhrg</li>
-                            <li>zrgdzrg</li>
-                            <li>zrgxhtttfhdg</li>
-                            <li>zrgzdrg</li>
-                        </ul>
+                        <div>
+                            <input type="text" class="research-list-input tertiary-color" id="appliances-research-input" name="main-research-input" minlength="3" maxlength="20"
+                                size="10" placeholder="Rechercher un appareil">
+                            <ul class="tertiary-color" id="list-appliances"></ul>
+                        </div>
                     </details>
 
-                    <details class="research-list" id="list-utensils">
+                    <details class="research-list primary-color">
                         <summary>
                             Ustensiles
-                            <img src="img/arrow_down.svg" alt="">
+                            <img src="img/arrow_down.svg" alt="arrow down svg">
                         </summary>
-                        <ul>
-                            <li>sdfxhttxhaef </li>
-                            <li>xthtfxdg</li>
-                            <li>zrgzdrg</li>
-                            <li>zrgdzrg</li>
-                            <li>zrxthxgzrdg</li>
-                            <li>zrghzthdzdrg</li>
-                        </ul>
+                        <div>
+                            <input type="text" class="research-list-input primary-color" id="ustensils-research-input" name="main-research-input" minlength="3" maxlength="20"
+                                size="10" placeholder="Rechercher un ustensile">
+                            <ul class="primary-color" id="list-ustensils"></ul>
+                        </div>
                     </details>
                 </div>
 
             </form>
         </section>
 
-
-        <section id="section-results">
-        </section>
+        <section id="section-results"></section>
 
     </main>
-
     <script type="module" src="script.js"></script>
-
 </body>
 
 </html>

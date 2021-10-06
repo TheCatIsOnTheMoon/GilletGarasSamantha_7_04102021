@@ -18,11 +18,13 @@ html {
 }
 
 body {
+    position: relative;
+
     max-width: 1500px;
     margin: auto;
     padding: 0;
+
     font-family: "DM Sans", sans-serif;
-    position: relative;
 }
 
 main {
@@ -31,13 +33,36 @@ main {
 }
 
 button {
-    border: none;
     background-color: transparent;
+    border: none;
+
     cursor: pointer;
 }
 
 summary {
     display: block;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.primary-color {
+    background-color: var(--color-primary);
+    scrollbar-color: white var(--color-primary);
+    color: white;
+}
+
+.secondary-color {
+    background-color: var(--color-secondary);
+    scrollbar-color: white var(--color-secondary);
+    color: white;
+}
+
+.tertiary-color {
+    background-color: var(--color-tertiary);
+    scrollbar-color: white var(--color-tertiary);
+    color: white;
 }
 
 /* header ---------------------------------------------------------------------------*/
@@ -46,18 +71,18 @@ header {
 }
 
 #logo {
-    margin: 0 50%;
-    transform: translateX(-50%);
-
     height: 46px;
     width: 50px;
+    margin: 0 50%;
+
+    transform: translateX(-50%);
 }
 
 h1 {
     color: var(--color-primary);
-    font-weight: bold;
-    font-size: 36px;
     text-align: center;
+    font-size: 36px;
+    font-weight: bold;
 }
 
 /* section-sort ---------------------------------------------------------------------------*/
@@ -66,10 +91,10 @@ h1 {
 }
 
 #main-searchbar input {
+    background-color: var(--background-grey--lighter);
     width: 100%;
     padding: 1rem;
     border-radius: 5px;
-    background-color: var(--background-grey--lighter);
 }
 
 #main-searchbar button {
@@ -83,25 +108,29 @@ h1 {
 }
 
 /* tags */
-#tags {
+#tag-section {
     margin-top: 1.5rem;
 }
 
 .tag {
+    position: relative;
+
+    margin-right: .5rem;
+    padding: .2rem .5rem;
+
     color: white;
     font-size: 12px;
     font-weight: 500;
-    padding: .2rem .5rem;
+
     border-radius: 5px;
-    margin-right: .5rem;
-    position: relative;
 }
 
 .tag button img {
-    width: .8rem;
     position: absolute;
     top: .3rem;
+
     right: .4rem;
+    width: .8rem;
 }
 
 /* lists */
@@ -112,67 +141,66 @@ h1 {
 
 .research-list {
     position: relative;
-    padding: 1rem;
-    border-radius: 5px;
+
     margin-right: 1rem;
+    padding: 1rem;
+
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.research-list:hover {
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--background-grey);
+    transition: 300ms ease;
 }
 
 .research-list summary {
-    color: white;
+    height: 1rem;
+    width: 8rem;
+
     font-weight: 500;
+    text-align: center;
 }
 
 .research-list summary img {
     margin-left: 1rem;
 }
 
-.research-list input {
-    border-radius: 5px 5px 0 0;
+.research-list-input {
     position: absolute;
-    top: 0;
+    top: 0rem;
     left: 0;
+    z-index: 1;
+
+    width: 40rem;
     padding: 1rem;
-    margin-right: 1rem;
-    color: white;
+
+    border-radius: 5px;
 }
 
 .research-list ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1;
+
     position: absolute;
     top: 1.5rem;
     left: 0;
+
     margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 0 0 5px 5px;
-    color: white;
+    padding: 1.25rem;
+    max-height: 23rem;
+
     font-weight: 500;
+
+    border-radius: 0 0 5px 5px;
 }
 
 .research-list ul li {
     padding-bottom: .3rem;
 }
-
-.tag-ingredients,
-#list-ingredients,
-#list-ingredients input,
-#list-ingredients ul {
-    background-color: var(--color-secondary);
-}
-
-.tag-device,
-#list-device,
-#list-device input,
-#list-device ul {
-    background-color: var(--color-tertiary);
-}
-
-.tag-utensils,
-#list-utensils,
-#list-utensils input,
-#list-utensils ul {
-    background-color: var(--color-primary);
-}
-
-
 
 /* Section-results ---------------------------------------------------------------------------*/
 #section-results {
@@ -187,6 +215,13 @@ figure {
     width: calc((100% / 3) - (100px / 3));
     height: 364px;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+figure:hover {
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--background-grey);
+    transform: translate3d(-.2rem, 0, -.2rem);
+    transition: 300ms ease;
 }
 
 .recipe-illustration {
@@ -205,6 +240,13 @@ figcaption {
     justify-content: space-between;
 }
 
+.recipe-header h2 {
+    width: 70%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
 .recipe-time img {
     height: .8rem;
     margin-right: .5rem;
@@ -212,23 +254,32 @@ figcaption {
 
 .recipe-content {
     display: flex;
+    justify-content: space-between;
     margin-top: 1rem;
 }
 
-.recipe-ingredients {
-    line-height: .9rem;
+.recipe-ingredients,
+.recipe-instructions {
+    /* for the vertical ellipsis */
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /*  */
+
+    max-height: 7rem;
+
     font-size: 12px;
+    line-height: 1rem;
+}
+
+.recipe-ingredients {
     max-width: 150px;
-    margin-right: 2rem;
 }
 
 .recipe-instructions {
-    line-height: .9rem;
-    font-size: 12px;
     max-width: 160px;
-    white-space: normal;
-    /* white-space: nowrap; */
-    /* ellipsis seem to work only with nowrap ??? */
-    text-overflow: ellipsis;
-    overflow: hidden;
 }
+
+/* animations ------------------------------------------------------------------------------ */
+/* accessibility --------------------------------------------------------------------------- */
