@@ -5,6 +5,10 @@ export function displayDropdownLists(recipes) {
     ustensilsList(recipes)
 
     // close lists when click outside
+    document.addEventListener("click", (event) => {
+        closeDetailsLists(event)
+    });
+
     function closeDetailsLists(event) {
         document.querySelectorAll(".research-list").forEach(element => {
             if (!element.contains(event.target)) {
@@ -13,14 +17,10 @@ export function displayDropdownLists(recipes) {
         });
     };
 
-    document.addEventListener("click", (event) => {
-        closeDetailsLists(event)
-    });
-
+    //display lists
     function displayDropdownList(list, elementID) {
-
         let dropdownListDOM = "";
-
+        
         list.map(element => {
             dropdownListDOM += `<li>${element}</li> `
         });
@@ -28,6 +28,7 @@ export function displayDropdownLists(recipes) {
         document.getElementById(elementID).innerHTML = dropdownListDOM;
     }
 
+    //compile lists functions
     function ingredientsList(recipes) {
 
         let result = [];
