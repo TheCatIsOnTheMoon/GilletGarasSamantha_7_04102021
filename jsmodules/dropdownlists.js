@@ -18,11 +18,11 @@ export function displayDropdownLists(recipes) {
     };
 
     //display lists
-    function displayDropdownList(list, elementID) {
+    function displayDropdownList(list, elementID, color) {
         let dropdownListDOM = "";
         
         list.map(element => {
-            dropdownListDOM += `<li>${element}</li> `
+            dropdownListDOM += `<li class="list-element ${color}">${element}</li> `
         });
 
         document.getElementById(elementID).innerHTML = dropdownListDOM;
@@ -40,7 +40,7 @@ export function displayDropdownLists(recipes) {
 
         let ingredientsList = [];
         removeDuplicates(result, ingredientsList)
-        displayDropdownList(ingredientsList, "list-ingredients")
+        displayDropdownList(ingredientsList, "list-ingredients", "secondary-color")
     }
 
     function appliancesList(recipes) {
@@ -52,7 +52,7 @@ export function displayDropdownLists(recipes) {
 
         let appliancesList = [];
         removeDuplicates(result, appliancesList)
-        displayDropdownList(appliancesList, "list-appliances")
+        displayDropdownList(appliancesList, "list-appliances", "tertiary-color")
     }
 
     function ustensilsList(recipes) {
@@ -66,7 +66,7 @@ export function displayDropdownLists(recipes) {
 
         let ustensilsList = [];
         removeDuplicates(result, ustensilsList)
-        displayDropdownList(ustensilsList, "list-ustensils")
+        displayDropdownList(ustensilsList, "list-ustensils", "primary-color")
     }
 
     function removeDuplicates(list, newList) {
