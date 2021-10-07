@@ -1,26 +1,34 @@
-@media all and (max-width: 560px) {
+@media all and (max-width: 900px) {
+    figure {
+        background-color: var(--background-grey);
+        width: calc((100% / 2) - (25px));
+        height: 364px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+@media all and (max-width: 573px) {
     #main-searchbar {
         display: flex;
     }
 
     #main-searchbar input::placeholder {
         white-space: nowrap;
-        text-overflow: ellipsis;
         overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     #main-searchbar button {
-        background-color: var(--color-tertiary);
-        border-radius: 5px;
         position: initial;
+        background-color: var(--color-tertiary);
         width: 2rem;
+        height: 4rem;
         margin-left: .5rem;
+        border-radius: 5px;
     }
 
-    #tags {
-        display: none;
-    }
-
+    #tag-section,
     #research-selections {
         display: none;
     }
