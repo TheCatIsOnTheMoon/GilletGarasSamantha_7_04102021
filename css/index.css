@@ -278,10 +278,9 @@ figcaption {
 
 .recipe-ingredients {
     width: 50%;
-    padding-right: .5rem;
+    padding-right: 2rem;
 }
 
 .recipe-instructions {
     width: 50%;
-    ;
 }
