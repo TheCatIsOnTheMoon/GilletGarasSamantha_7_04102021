@@ -4,25 +4,25 @@ export function displayRecipes(recipes) {
 
     recipes.forEach(recipe => {
         recipesDisplayDOM += `
-            <figure>
+            <figure tabindex='0'>
                 <div class="recipe-illustration"></div>
                 <figcaption>
                     <div class="recipe-header">
                         <h2 class="recipe-title">${recipe.name}</h2>
-                        <div class="recipe-time"><img src="img/clock.svg" alt=""><strong>${recipe.time} min</strong></div>
+                        <div class="recipe-time"><img src="img/clock.svg" alt="clock svg" aria-hidden="true"><strong>${recipe.time} min</strong></div>
                     </div>
                     <div class="recipe-content">
                         <ul class="recipe-ingredients">
                             ${recipe.ingredients.map((ingredient) => {
-                                return "<li><a href='#' class='ingredient' tabindex='0'><strong>" + ingredient.ingredient + 
+                                return "<li  class='ingredient'><strong>" + ingredient.ingredient + 
                                     "</strong><span class='ingredient-quantity'> " + ingredient.quantity + 
                                     "</span><span class='ingredient-unit'>"+" " + ingredient.unit + 
-                                "</span></a></li>";}).join(' ')}
+                                "</span></li>";}).join(' ')}
                         </ul>
                         <div class="recipe-instructions">${recipe.description}</div>
                     </div>
                 </figcaption>
-            </figure>
+            </figure>       
         `
     });
 
