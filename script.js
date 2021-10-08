@@ -16,6 +16,8 @@ const globalResearchBar = document.getElementById("main-research-input");
 globalResearchBar.addEventListener("input", () => {
     if (globalResearchBar.value.length >= 3) {
         globalResearch(globalResearchBar.value)
+    } else {
+        displayRecipes(recipes);
     }
 });
 
