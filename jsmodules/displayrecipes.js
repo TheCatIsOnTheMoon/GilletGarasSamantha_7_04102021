@@ -1,5 +1,11 @@
 export function displayRecipes(recipes) {
 
+    if (recipes.length === 0) {
+        document.getElementById("no-result-message").style.display = "block"
+    } else {
+        document.getElementById("no-result-message").style.display = "none"
+    }
+
     let recipesDisplayDOM = "";
 
     recipes.forEach(recipe => {
@@ -31,9 +37,6 @@ export function displayRecipes(recipes) {
     const ingredientsQuantity = document.querySelectorAll(".ingredient-quantity");
     const ingredientsUnit = document.querySelectorAll(".ingredient-unit");
 
-    deleteUndefined(ingredientsQuantity)
-    deleteUndefined(ingredientsUnit)
-
     function deleteUndefined(list) {
         list.forEach(element => {
             if (element.innerHTML === " undefined") {
@@ -41,4 +44,7 @@ export function displayRecipes(recipes) {
             };
         });
     }
+
+    deleteUndefined(ingredientsQuantity)
+    return deleteUndefined(ingredientsUnit)
 }

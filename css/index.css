@@ -276,6 +276,13 @@ h1 {
 }
 
 /* Section-results ---------------------------------------------------------------------------*/
+#no-result-message {
+    margin: 3rem;
+    color: grey;
+    text-align: center;
+    font-size: 1em;
+}
+
 #section-results {
     margin-top: 3rem;
     display: flex;
