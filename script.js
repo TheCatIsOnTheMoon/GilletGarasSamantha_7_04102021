@@ -21,31 +21,31 @@ globalResearchBar.addEventListener("input", () => {
 
 function globalResearch(value) {
 
-    let globalResearchResultList = [];
+    let globalResearchResult = [];
 
     recipes.map(recipe => {
      
         //research into recipes names
-        if (recipe.name.includes(value)) {
-            globalResearchResultList.push(recipe)
+        if (recipe.name.toLowerCase().includes(value)) {
+            globalResearchResult.push(recipe)
+        };
+
+        //research into recipes appliances
+        if (recipe.appliance.toLowerCase().includes(value)) {
+            globalResearchResult.push(recipe)
         };
 
         //research into recipes ingredients
         recipe.ingredients.map(ingredient => {
-            if (ingredient.ingredient.includes(value)) {
-                globalResearchResultList.push(recipe)
+            if (ingredient.ingredient.toLowerCase().includes(value)) {
+                globalResearchResult.push(recipe)
             } 
         });
 
-        //research into recipes appliances
-        if (recipe.appliance.includes(value)) {
-            globalResearchResultList.push(recipe)
-        };
-
         //research into recipes ustensils
         recipe.ustensils.map(ustensil => {
-            if (ustensil.includes(value)) {
-                globalResearchResultList.push(recipe)
+            if (ustensil.toLowerCase().includes(value)) {
+                globalResearchResult.push(recipe)
             } 
         });
 
@@ -55,9 +55,9 @@ function globalResearch(value) {
         // first, convert an array of duplicates to a Set. The new Set will implicitly remove duplicate elements.
         // then, convert the set back to an array.
         // application here :
-        let newGlobalResearchResultList = [...new Set(globalResearchResultList)]
+        let newGlobalResearchResult = [...new Set(globalResearchResult)]
 
         //display result
-        console.log(newGlobalResearchResultList);
+        return displayRecipes(newGlobalResearchResult);
     })
 }
