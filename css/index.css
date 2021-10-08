@@ -92,6 +92,10 @@ strong {
     width: 1px !important;
 }
 
+input:focus {
+    outline: none;
+}
+
 /* header ---------------------------------------------------------------------------*/
 header {
     margin-top: 2rem;
