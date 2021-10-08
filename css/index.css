@@ -1,3 +1,23 @@
+/* ORGANIZATION */
+/* 
+colors variables
+base
+header
+main
+animations
+*/
+/* 
+element {
+    - display stuff
+    - positioning
+    - box-model(background, width ...)
+    - typography
+    - manipulation(moving, blur etc...)
+    - misc(border radius, box shadow)
+}
+*/
+
+/* CSS */
 /* colors variables--------------------------------------------------------------------------*/
 :root {
     --color-primary: #ED6454;
