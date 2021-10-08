@@ -191,10 +191,16 @@ h1 {
 
 .research-list summary img {
     width: 1rem;
+    transition: 300ms ease-out;
 }
 
 .research-list[open]>summary {
     width: 40rem;
+}
+
+.research-list[open]>summary img {
+    transform: rotate(180deg);
+    transition: 300ms ease-out;
 }
 
 .research-list-input {
