@@ -34,7 +34,7 @@ export function displayDropdownLists(recipes) {
         let result = [];
         for (let index = 0; index < recipes.length; index++) {
             recipes[index].ingredients.map(ingredient => {
-                result.push(ingredient.ingredient)
+                result.push(ingredient.ingredient.toLowerCase())
             })
         }
 
@@ -47,7 +47,7 @@ export function displayDropdownLists(recipes) {
 
         let result = [];
         for (let index = 0; index < recipes.length; index++) {
-            result.push(recipes[index].appliance)
+            result.push(recipes[index].appliance.toLowerCase())
         }
 
         let appliancesList = [];
@@ -60,7 +60,7 @@ export function displayDropdownLists(recipes) {
         let result = [];
         for (let index = 0; index < recipes.length; index++) {
             recipes[index].ustensils.map(ustensil => {
-                result.push(ustensil)
+                result.push(ustensil.toLowerCase())
             })
         }
 
