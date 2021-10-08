@@ -71,13 +71,29 @@ strong {
 
 .secondary-color {
     background-color: var(--color-secondary);
-    scrollbar-color: white var(--color-secondary);
     color: white;
 }
 
 .tertiary-color {
     background-color: var(--color-tertiary);
     color: white;
+}
+
+/* stylizing scrollbar firefox */
+.secondary-color {
+    scrollbar-color: white var(--color-secondary);
+}
+
+/* stylizing scrollbar WebKit and Chromiums : */
+.secondary-color::-webkit-scrollbar {
+    /* stylizing scrollbar background */
+    background-color: var(--color-secondary);
+}
+
+.secondary-color::-webkit-scrollbar-thumb {
+    /* stylizing scrollbar handle */
+    background-color: white;
+    border-radius: .5rem;
 }
 
 /* allow to hide the label of an input in an accessible way */
@@ -94,6 +110,11 @@ strong {
 
 input:focus {
     outline: none;
+}
+
+input::placeholder {
+    font-family: "DM Sans", sans-serif;
+    font-size: .8rem;
 }
 
 /* header ---------------------------------------------------------------------------*/
@@ -217,6 +238,12 @@ h1 {
     padding: 1rem;
 
     border-radius: 5px;
+}
+
+.research-list-input::placeholder {
+    opacity: 0.6;
+    font-weight: bold;
+    color: white;
 }
 
 .research-list ul {
