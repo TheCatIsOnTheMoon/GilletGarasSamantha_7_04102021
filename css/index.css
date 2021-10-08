@@ -240,6 +240,10 @@ h1 {
     padding-bottom: .3rem;
 }
 
+.research-list ul li:hover {
+    text-decoration: underline;
+}
+
 /* Section-results ---------------------------------------------------------------------------*/
 #section-results {
     margin-top: 3rem;
