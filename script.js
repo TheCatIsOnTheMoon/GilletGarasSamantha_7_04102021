@@ -53,10 +53,6 @@ function globalResearch(value) {
 
         //remove duplicates
         //https://www.javascripttutorial.net/array/javascript-remove-duplicates-from-array/
-        // a Set is a collection of unique values. To remove duplicates from an array:
-        // first, convert an array of duplicates to a Set. The new Set will implicitly remove duplicate elements.
-        // then, convert the set back to an array.
-        // application here :
         let newGlobalResearchResult = [...new Set(globalResearchResult)]
 
         //display result
