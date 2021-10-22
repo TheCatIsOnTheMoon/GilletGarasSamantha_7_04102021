@@ -97,7 +97,7 @@ function research(recipes) {
                 // selected tags filter
                 let filterForEachTag = selectedTags.map(selectedtag => {
 
-                    let tag = selectedtag.slice(0, -1).toLowerCase();
+                    let tag = selectedtag.trim().toLowerCase();
 
                     // tag into recipe appliance ?
                     if (recipe.appliance.toLowerCase().includes(tag)) {
