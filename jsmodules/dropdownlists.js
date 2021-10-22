@@ -112,7 +112,6 @@ export function dropdownLists(recipes) {
 
     //events
     ingredientsResearchInput.addEventListener("input", () => {
-        console.log(displayedIngredientList)
         research(ingredientsResearchInput, displayedIngredientList, "list-ingredients", "secondary-color")
     });
 
