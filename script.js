@@ -64,9 +64,9 @@ function research(recipes) {
 
     } else {
 
-        filteredRecipes = recipes.filter((recipe) => {
+        if (inputContent.length >= 3) {
 
-            if (inputContent.length >= 3) {
+            filteredRecipes = recipes.filter((recipe) => {
 
                 // input content into recipe name or description ?
                 if (recipe.name.toLowerCase().includes(inputContent) ||
@@ -87,15 +87,12 @@ function research(recipes) {
                 } else {
                     return false;
                 };
+            });
+        }
 
-            } else {
-                return true
-            }
-        });
+        if (selectedTags.length !== 0) {
 
-        filteredRecipes = filteredRecipes.filter((recipe) => {
-
-            if (selectedTags.length !== 0) {
+            filteredRecipes = filteredRecipes.filter((recipe) => {
 
                 // selected tags filter
                 let filterForEachTag = selectedTags.map(selectedtag => {
@@ -127,20 +124,14 @@ function research(recipes) {
                     } else {
                         return false;
                     };
-
                 })
 
                 if (filterForEachTag[0]) {
                     return recipe;
                 }
-
-            } else {
-
-                return true
-            }
-        });
+            });
+        }
     }
-
     displayRecipes(filteredRecipes);
     dropdownLists(filteredRecipes);
 }
