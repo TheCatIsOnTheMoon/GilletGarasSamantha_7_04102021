@@ -154,6 +154,8 @@ h1 {
     right: .6rem;
     width: 2rem;
     height: 2rem;
+
+    cursor: default;
 }
 
 #main-searchbar button img {
