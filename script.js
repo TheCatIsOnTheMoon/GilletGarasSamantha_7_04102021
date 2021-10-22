@@ -83,10 +83,17 @@ function research(recipes) {
 
                 if (filteredRecipesIngredients.length > 0) {
                     return true
+
                 } else {
                     return false;
                 };
+
+            } else {
+                return true
             }
+        });
+
+        filteredRecipes = filteredRecipes.filter((recipe) => {
 
             if (selectedTags.length !== 0) {
 
@@ -126,6 +133,10 @@ function research(recipes) {
                 if (filterForEachTag[0]) {
                     return recipe;
                 }
+
+            } else {
+
+                return true
             }
         });
     }
@@ -134,5 +145,6 @@ function research(recipes) {
     dropdownLists(filteredRecipes);
 }
 
+//maybe needed later :
 // remove duplicates //https://www.javascripttutorial.net/array/javascript-remove-duplicates-from-array/
 // let newinputResearchResult = [...new Set(inputResearchResult)]
