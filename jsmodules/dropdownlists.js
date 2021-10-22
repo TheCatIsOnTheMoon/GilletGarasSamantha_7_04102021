@@ -131,7 +131,6 @@ export function dropdownLists(recipes) {
 
         const filteredList = list.filter((listElement) => {
             if (listElement.includes(inputContent)) {
-                console.log(listElement)
                 return listElement
             }
         })

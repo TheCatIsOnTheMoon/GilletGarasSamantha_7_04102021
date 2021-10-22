@@ -52,93 +52,86 @@ function research(recipes) {
 
     // console.log(inputContent, selectedTags) // OK, exemple in console: string [ "array " ]\
 
-    
-    
-    
-    
-    // ********************************** filtre global research input *****************************************************
-    
+
+
+
+
+    // ********************************** filtre  *****************************************************
+
     if (inputContent.length < 3 && selectedTags.length === 0) {
 
         filteredRecipes = recipes;
 
     } else {
 
-        filteredRecipes = filteredRecipes.filter((recipe) => {
+        filteredRecipes = recipes.filter((recipe) => {
 
-            // selected tags filter
-            let filterForEachTag = selectedTags.map(selectedtag => {
+            if (inputContent.length >= 3) {
 
-                let tag = selectedtag.slice(0, -1).toLowerCase();
-
-                // tag into recipe appliance ?
-                if (recipe.appliance.toLowerCase().includes(tag)) {
-                    return true;
+                // input content into recipe name or description ?
+                if (recipe.name.toLowerCase().includes(inputContent) ||
+                    recipe.description.toLowerCase().includes(inputContent)) {
+                    return recipe;
                 };
 
-                // tag content into recipe ingredients ?
+                // input content into recipe ingredients ?
                 let filteredRecipesIngredients = recipe.ingredients.filter(ingredient => {
-                    if (ingredient.ingredient.toLowerCase().includes(tag)) {
-                        return true;
+                    if (ingredient.ingredient.toLowerCase().includes(inputContent)) {
+                        return recipe;
                     }
                 });
 
-                // tag content into recipe ustensils ?
-                let filteredRecipesUstensils = recipe.ustensils.filter(ustensil => {
-                    if (ustensil.toLowerCase().includes(tag)) {
-                        return true;
-                    }
-                });
-
-                //https://stackoverflow.com/questions/49698136/es5-filter-inside-filter
-                if (filteredRecipesIngredients.length > 0 || filteredRecipesUstensils.length > 0) {
+                if (filteredRecipesIngredients.length > 0) {
                     return true
                 } else {
                     return false;
                 };
-
-            })
-
-
-
-
-
-
-            // ********************************** filtre tags research *****************************************************
-
-
-            if (filterForEachTag[0]) {
-                console.log(recipe)
-                return recipe;
             }
-            
-            // input content into recipe name or description ?
-            if (recipe.name.toLowerCase().includes(inputContent) ||
-                recipe.description.toLowerCase().includes(inputContent)) {
-                return recipe;
-            };
 
-            // input content into recipe ingredients ?
-            let filteredRecipesIngredients = recipe.ingredients.filter(ingredient => {
-                if (ingredient.ingredient.toLowerCase().includes(inputContent)) {
+            if (selectedTags.length !== 0) {
+
+                // selected tags filter
+                let filterForEachTag = selectedTags.map(selectedtag => {
+
+                    let tag = selectedtag.slice(0, -1).toLowerCase();
+
+                    // tag into recipe appliance ?
+                    if (recipe.appliance.toLowerCase().includes(tag)) {
+                        return true;
+                    };
+
+                    // tag content into recipe ingredients ?
+                    let filteredRecipesIngredients = recipe.ingredients.filter(ingredient => {
+                        if (ingredient.ingredient.toLowerCase().includes(tag)) {
+                            return true;
+                        }
+                    });
+
+                    // tag content into recipe ustensils ?
+                    let filteredRecipesUstensils = recipe.ustensils.filter(ustensil => {
+                        if (ustensil.toLowerCase().includes(tag)) {
+                            return true;
+                        }
+                    });
+
+                    //https://stackoverflow.com/questions/49698136/es5-filter-inside-filter
+                    if (filteredRecipesIngredients.length > 0 || filteredRecipesUstensils.length > 0) {
+                        return true
+                    } else {
+                        return false;
+                    };
+
+                })
+
+                if (filterForEachTag[0]) {
                     return recipe;
                 }
-            });
-
-            if (filteredRecipesIngredients.length > 0) {
-                return true
-            } else {
-                return false;
-            };
-
+            }
         });
-
-        
     }
 
     displayRecipes(filteredRecipes);
     dropdownLists(filteredRecipes);
-
 }
 
 // remove duplicates //https://www.javascripttutorial.net/array/javascript-remove-duplicates-from-array/
