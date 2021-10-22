@@ -6,7 +6,7 @@ import {
     displayRecipes
 } from "./jsmodules/displayrecipes.js";
 import {
-    displayDropdownLists
+    dropdownLists
 } from "./jsmodules/dropdownlists.js";
 import {
     displayTags
@@ -14,7 +14,7 @@ import {
 
 
 //DOM display
-displayDropdownLists(recipes);
+dropdownLists(recipes);
 displayRecipes(recipes);
 displayTags();
 
@@ -39,7 +39,9 @@ let filteredRecipes = recipes;
 
 function research(recipes) {
 
-    //grab the elements needeed for research : input value and tags list
+
+
+    // ************************* grab the elements needeed for research : input value and tags list *************************************
 
     let inputContent = inputResearchBar.value.toLowerCase() //get input value
 
@@ -48,8 +50,14 @@ function research(recipes) {
         selectedTags.push(tag.innerText) //get selected tag list
     });
 
-    // console.log(inputContent, selectedTags) // OK, exemple in console: string [ "array " ]
+    // console.log(inputContent, selectedTags) // OK, exemple in console: string [ "array " ]\
 
+    
+    
+    
+    
+    // ********************************** filtre global research input *****************************************************
+    
     if (inputContent.length < 3 && selectedTags.length === 0) {
 
         filteredRecipes = recipes;
@@ -91,6 +99,14 @@ function research(recipes) {
 
             })
 
+
+
+
+
+
+            // ********************************** filtre tags research *****************************************************
+
+
             if (filterForEachTag[0]) {
                 console.log(recipe)
                 return recipe;
@@ -121,7 +137,8 @@ function research(recipes) {
     }
 
     displayRecipes(filteredRecipes);
-    displayDropdownLists(filteredRecipes);
+    dropdownLists(filteredRecipes);
+
 }
 
 // remove duplicates //https://www.javascripttutorial.net/array/javascript-remove-duplicates-from-array/

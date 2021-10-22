@@ -1,8 +1,12 @@
-export function displayDropdownLists(recipes) {
+export function dropdownLists(recipes) {
 
     ingredientsList(recipes)
     appliancesList(recipes)
     ustensilsList(recipes)
+
+
+
+
 
     // close lists when click outside
     document.addEventListener("click", (event) => {
@@ -17,6 +21,10 @@ export function displayDropdownLists(recipes) {
         });
     };
 
+
+
+
+
     //display lists
     function displayDropdownList(list, elementID, color) {
         let dropdownListDOM = "";
@@ -25,8 +33,13 @@ export function displayDropdownLists(recipes) {
             dropdownListDOM += `<li class="list-element ${color}">${element}</li> `
         });
 
-        document.getElementById(elementID).innerHTML = dropdownListDOM;
+        return document.getElementById(elementID).innerHTML = dropdownListDOM;
     }
+
+
+
+
+
 
     //compile lists functions
     function ingredientsList(recipes) {
@@ -41,6 +54,8 @@ export function displayDropdownLists(recipes) {
         let ingredientsList = [];
         removeDuplicates(result, ingredientsList)
         displayDropdownList(ingredientsList, "list-ingredients", "secondary-color")
+
+        return ingredientsList
     }
 
     function appliancesList(recipes) {
@@ -53,6 +68,8 @@ export function displayDropdownLists(recipes) {
         let appliancesList = [];
         removeDuplicates(result, appliancesList)
         displayDropdownList(appliancesList, "list-appliances", "tertiary-color")
+
+        return appliancesList
     }
 
     function ustensilsList(recipes) {
@@ -67,6 +84,8 @@ export function displayDropdownLists(recipes) {
         let ustensilsList = [];
         removeDuplicates(result, ustensilsList)
         displayDropdownList(ustensilsList, "list-ustensils", "primary-color")
+
+        return ustensilsList
     }
 
     function removeDuplicates(list, newList) {
@@ -76,4 +95,48 @@ export function displayDropdownLists(recipes) {
             }
         });
     }
+
+
+
+    // ********************************** filtre tags input research *****************************************************
+
+    //DOM
+    const ingredientsResearchInput = document.getElementById("ingredients-research-input");
+    const appliancesResearchInput = document.getElementById("appliances-research-input");
+    const ustensilsResearchInput = document.getElementById("ustensils-research-input");
+
+    //variables
+    let displayedIngredientList = ingredientsList(recipes);
+    let displayedAppliancesList = appliancesList(recipes);
+    let displayedUstensilsList = ustensilsList(recipes);
+
+    //events
+    ingredientsResearchInput.addEventListener("input", () => {
+        console.log(displayedIngredientList)
+        research(ingredientsResearchInput, displayedIngredientList, "list-ingredients", "secondary-color")
+    });
+
+    appliancesResearchInput.addEventListener("input", () => {
+        research(appliancesResearchInput, displayedAppliancesList, "list-appliances", "tertiary-color")
+    });
+
+    ustensilsResearchInput.addEventListener("input", () => { 
+        research(ustensilsResearchInput, displayedUstensilsList, "list-ustensils", "primary-color")
+    });
+
+    //filter function
+    function research(inputName, list, elementID, color) {
+
+        let inputContent = inputName.value.toLowerCase() //get input value
+
+        const filteredList = list.filter((listElement) => {
+            if (listElement.includes(inputContent)) {
+                console.log(listElement)
+                return listElement
+            }
+        })
+
+        return displayDropdownList(filteredList, elementID, color)
+    }
+
 }
