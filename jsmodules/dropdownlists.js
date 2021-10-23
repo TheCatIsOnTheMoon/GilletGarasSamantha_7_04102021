@@ -1,13 +1,5 @@
 export function dropdownLists(recipes) {
 
-    ingredientsList(recipes)
-    appliancesList(recipes)
-    ustensilsList(recipes)
-
-
-
-
-
     // close lists when click outside
     document.addEventListener("click", (event) => {
         closeDetailsLists(event)
@@ -21,10 +13,6 @@ export function dropdownLists(recipes) {
         });
     };
 
-
-
-
-
     //display lists
     function displayDropdownList(list, elementID, color) {
         let dropdownListDOM = "";
@@ -36,12 +24,11 @@ export function dropdownLists(recipes) {
         return document.getElementById(elementID).innerHTML = dropdownListDOM;
     }
 
+    //compile lists
+    ingredientsList(recipes)
+    appliancesList(recipes)
+    ustensilsList(recipes)
 
-
-
-
-
-    //compile lists functions
     function ingredientsList(recipes) {
 
         let result = [];
@@ -96,9 +83,9 @@ export function dropdownLists(recipes) {
         });
     }
 
-
-
-    // ********************************** filtre tags input research *****************************************************
+    //
+    //filtre for tags input research
+    //
 
     //DOM
     const ingredientsResearchInput = document.getElementById("ingredients-research-input");
@@ -133,8 +120,6 @@ export function dropdownLists(recipes) {
                 return listElement
             }
         })
-
         return displayDropdownList(filteredList, elementID, color)
     }
-
 }
