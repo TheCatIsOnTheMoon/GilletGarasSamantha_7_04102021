@@ -1,19 +1,10 @@
 //modules
-import {
-    recipes
-} from "./jsmodules/recipes.js";
-import {
-    displayRecipes
-} from "./jsmodules/displayrecipes.js";
-import {
-    dropdownLists
-} from "./jsmodules/dropdownlists.js";
-import {
-    displayTags
-} from "./jsmodules/displaytags.js";
+import {recipes} from "./jsmodules/recipes.js";
+import {displayRecipes} from "./jsmodules/displayrecipes.js";
+import {dropdownLists} from "./jsmodules/dropdownlists.js";
+import {displayTags} from "./jsmodules/displaytags.js";
 
-
-//DOM display
+//Base DOM display
 dropdownLists(recipes);
 displayRecipes(recipes);
 displayTags();
@@ -37,11 +28,10 @@ document.addEventListener("click", (event) => {
 //initializing
 let filteredRecipes = recipes;
 
+// research function
 function research(recipes) {
 
-
-
-    // ************************* grab the elements needeed for research : input value and tags list *************************************
+    //grab the elements needeed for research : input value and tags list
 
     let inputContent = inputResearchBar.value.toLowerCase() //get input value
 
@@ -50,37 +40,36 @@ function research(recipes) {
         selectedTags.push(tag.innerText) //get selected tag list
     });
 
-    // console.log(inputContent, selectedTags) // OK, exemple in console: string [ "array " ]\
-
-
-
-
-
-    // ********************************** filtre  *****************************************************
-
+    //filtres
     if (inputContent.length < 3 && selectedTags.length === 0) {
 
         filteredRecipes = recipes;
 
     } else {
 
+        if (inputContent.length < 3) {
+
+            filteredRecipes = recipes;
+        }
+
         if (inputContent.length >= 3) {
 
             filteredRecipes = recipes.filter((recipe) => {
 
-                // input content into recipe name or description ?
+                // verify if input content is into recipe name or description
                 if (recipe.name.toLowerCase().includes(inputContent) ||
                     recipe.description.toLowerCase().includes(inputContent)) {
                     return recipe;
                 };
 
-                // input content into recipe ingredients ?
+                // verify if input content is into recipe ingredients
                 let filteredRecipesIngredients = recipe.ingredients.filter(ingredient => {
                     if (ingredient.ingredient.toLowerCase().includes(inputContent)) {
                         return recipe;
                     }
                 });
 
+                //https://stackoverflow.com/questions/49698136/es5-filter-inside-filter
                 if (filteredRecipesIngredients.length > 0) {
                     return true
 
@@ -97,21 +86,22 @@ function research(recipes) {
                 // selected tags filter
                 let filterForEachTag = selectedTags.map(selectedtag => {
 
+                    // .trim() to delete extra spaces before and after
                     let tag = selectedtag.trim().toLowerCase();
 
-                    // tag into recipe appliance ?
+                    // verify if tag is into recipe appliance
                     if (recipe.appliance.toLowerCase().includes(tag)) {
                         return true;
                     };
 
-                    // tag content into recipe ingredients ?
+                    // verify if tag is into recipe ingredients
                     let filteredRecipesIngredients = recipe.ingredients.filter(ingredient => {
                         if (ingredient.ingredient.toLowerCase().includes(tag)) {
                             return true;
                         }
                     });
 
-                    // tag content into recipe ustensils ?
+                    // verify if tag is into recipe ustensils
                     let filteredRecipesUstensils = recipe.ustensils.filter(ustensil => {
                         if (ustensil.toLowerCase().includes(tag)) {
                             return true;
@@ -126,16 +116,23 @@ function research(recipes) {
                     };
                 })
 
-                if (filterForEachTag[0]) {
+                // verify that ALL the selected tag are in the recipe, if yes : display
+                if (filterForEachTag.every(verifyTagPresence)) {
                     return recipe;
+                }
+
+                function verifyTagPresence(tag) {
+                    if (tag === true) {
+                        return true
+                    } else {
+                        return false
+                    }
                 }
             });
         }
     }
+
+    // displays
     displayRecipes(filteredRecipes);
     dropdownLists(filteredRecipes);
 }
-
-//maybe needed later :
-// remove duplicates //https://www.javascripttutorial.net/array/javascript-remove-duplicates-from-array/
-// let newinputResearchResult = [...new Set(inputResearchResult)]
