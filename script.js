@@ -13,6 +13,9 @@ displayTags();
 const inputResearchBar = document.getElementById("main-research-input");
 
 inputResearchBar.addEventListener("input", () => {
+    if (inputResearchBar.value < 3) {
+        return false;
+    }
     research(recipes)
 });
 
@@ -25,11 +28,11 @@ document.addEventListener("click", (event) => {
     }
 });
 
-//initializing
-let filteredRecipes = recipes;
-
 // research function
 function research(recipes) {
+
+    //initializing
+    let filteredRecipes = recipes;
 
     //grab the elements needeed for research : input value and tags list
 
@@ -111,9 +114,8 @@ function research(recipes) {
                     //https://stackoverflow.com/questions/49698136/es5-filter-inside-filter
                     if (filteredRecipesIngredients.length > 0 || filteredRecipesUstensils.length > 0) {
                         return true
-                    } else {
-                        return false;
-                    };
+                    }
+                    return false
                 })
 
                 // verify that ALL the selected tag are in the recipe, if yes : display
@@ -124,9 +126,8 @@ function research(recipes) {
                 function verifyTagPresence(tag) {
                     if (tag === true) {
                         return true
-                    } else {
-                        return false
                     }
+                    return false
                 }
             });
         }
