@@ -1,11 +1,13 @@
 export function displayRecipes(recipes) {
 
+    // display a "no result" message if there is no recipe to display
     if (recipes.length === 0) {
         document.getElementById("no-result-message").style.display = "block"
     } else {
         document.getElementById("no-result-message").style.display = "none"
     }
 
+    // DOM
     let recipesDisplayDOM = "";
 
     recipes.forEach(recipe => {
@@ -34,6 +36,7 @@ export function displayRecipes(recipes) {
 
     document.getElementById("section-results").innerHTML = recipesDisplayDOM;
 
+    // corrections for undefined display issues
     const ingredientsQuantity = document.querySelectorAll(".ingredient-quantity");
     const ingredientsUnit = document.querySelectorAll(".ingredient-unit");
 
@@ -44,7 +47,6 @@ export function displayRecipes(recipes) {
             };
         });
     }
-
     deleteUndefined(ingredientsQuantity)
     return deleteUndefined(ingredientsUnit)
 }

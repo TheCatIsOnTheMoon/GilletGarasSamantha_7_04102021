@@ -1,16 +1,23 @@
 @media all and (max-width: 900px) {
     figure {
-        background-color: var(--background-grey);
         width: calc((100% / 2) - (25px));
         height: 364px;
-        border-radius: 5px;
-        cursor: pointer;
     }
 }
 
 @media all and (max-width: 573px) {
+
+    main {
+        margin: 1rem;
+    }
+
     #main-searchbar {
         display: flex;
+    }
+
+    #main-searchbar input {
+        width: 90%;
+        border-radius: 5px 0px 0px 5px;
     }
 
     #main-searchbar input::placeholder {
@@ -20,17 +27,25 @@
     }
 
     #main-searchbar button {
-        position: initial;
-        background-color: var(--color-tertiary);
-        width: 2rem;
-        height: 4rem;
-        margin-left: .5rem;
-        border-radius: 5px;
+        top: 0;
+        right: 0;
+        background-color: var(--background-grey--lighter);
+        width: 15%;
+        height: 3rem;
+        border-radius: 0px 5px 5px 0px;
     }
 
-    #tag-section,
-    #research-selections {
-        display: none;
+    .research-list[open]>summary {
+        width: 15rem;
+    }
+
+    .research-list-input {
+        width: 15rem;
+    }
+
+    .research-list ul {
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+        width: 17rem;
     }
 
     #section-results {

@@ -1,5 +1,6 @@
 export function displayTags() {
 
+    //events
     document.addEventListener("click", (event) => {
         if (event.target.className === "list-element primary-color" ||
             event.target.className === "list-element secondary-color" ||
@@ -10,9 +11,9 @@ export function displayTags() {
         if (event.target.className === "delete-tag-btn") {
             deleteTag(event)
         }
-
     });
 
+    //functions
     function createNewTag(event) {
         let targetContent = event.target.innerHTML;
         let targetColor = event.target.className;

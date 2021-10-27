@@ -25,37 +25,45 @@
 
 <body>
 
+    <!-- HEADER -->
     <header>
         <img src="img/logo.svg" id="logo" alt="logo Les petits plats" aria-hidden="true">
         <h1>Les petits plats</h1>
     </header>
 
+    <!-- MAIN -->
     <main>
         <section>
 
+            <!-- GLOBAL SEARCH BAR -->
             <form id="form-research-global" name="form-research-global" action="index.html" method="get" action="">
                 <div id="main-searchbar">
                     <input type="text" id="main-research-input" name="main-research-input" minlength="3" maxlength="20"
                         size="10" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette">
                     <label class="hidden-label" for="main-research-input">Rechercher un ingrédient, appareil, ustensiles
                         ou une recette</label>
-                    <button>
+                    <button disabled>
                         <img src="img/search.svg" alt="magnifying glass svg">
                     </button>
                 </div>
             </form>
 
+            <!-- SELECTED TAG DISPLAY SECTION -->
             <div id="tag-section">
             </div>
 
+            <!-- DROPDOWN LISTS : ingredients, appliances and ustensils -->
             <div id="research-selections">
+
+                <!-- ingredients -->
                 <details class="research-list secondary-color">
                     <summary>
                         Ingredients
                         <img src="img/arrow.svg" alt="arrow svg">
                     </summary>
                     <div>
-                        <form id="form-research-ingredients" name="form-research-ingredients" action="index.html" method="get" action="">
+                        <form id="form-research-ingredients" name="form-research-ingredients" action="index.html"
+                            method="get" action="">
                             <input type="text" class="research-list-input secondary-color"
                                 id="ingredients-research-input" name="ingredients-research-input" minlength="3"
                                 maxlength="20" size="10" placeholder="Rechercher un ingrédient">
@@ -66,13 +74,15 @@
                     </div>
                 </details>
 
+                <!-- appliances -->
                 <details class="research-list tertiary-color">
                     <summary>
                         Appareil
                         <img src="img/arrow.svg" alt="arrow svg">
                     </summary>
                     <div>
-                        <form id="form-research-appliances" name="form-research-appliances" action="index.html" method="get" action="">
+                        <form id="form-research-appliances" name="form-research-appliances" action="index.html"
+                            method="get" action="">
                             <input type="text" class="research-list-input tertiary-color" id="appliances-research-input"
                                 name="appliances-research-input" minlength="3" maxlength="20" size="10"
                                 placeholder="Rechercher un appareil">
@@ -82,13 +92,15 @@
                     </div>
                 </details>
 
+                <!-- ustensils -->
                 <details class="research-list primary-color">
                     <summary>
                         Ustensiles
                         <img src="img/arrow.svg" alt="arrow svg">
                     </summary>
                     <div>
-                        <form id="form-research-ustensils" name="form-research-ustensils" action="index.html" method="get" action="">
+                        <form id="form-research-ustensils" name="form-research-ustensils" action="index.html"
+                            method="get" action="">
                             <input type="text" class="research-list-input primary-color" id="ustensils-research-input"
                                 name="ustensils-research-input" minlength="3" maxlength="20" size="10"
                                 placeholder="Rechercher un ustensile">
@@ -97,21 +109,26 @@
                         <ul class="primary-color" id="list-ustensils"></ul>
                     </div>
                 </details>
-            </div>
 
+            </div>
 
         </section>
 
+        <!-- NO RESULT MESSAGE -->
         <article class="" id="no-result-message">
             Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.
         </article>
 
+        <!-- RECIPE DISPLAY -->
         <section id="section-results">
-            
+            <!-- recipes -->
         </section>
 
     </main>
+
+    <!-- JavaScript -->
     <script type="module" src="script.js"></script>
+
 </body>
 
 </html>
