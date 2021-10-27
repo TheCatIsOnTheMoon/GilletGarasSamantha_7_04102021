@@ -70,34 +70,34 @@ function research(recipes) {
             for (let recipeIndex = 0; recipeIndex < recipes.length; recipeIndex++) {
                 //research into recipes names
                 if (recipes[recipeIndex].name.toLowerCase().includes(inputContent)) {
-                    globalResearchResult.push(recipes[recipeIndex])
-                };
+                    globalResearchResult.push(recipes[recipeIndex]);
+                }
 
                 //research into recipes appliances
                 if (recipes[recipeIndex].appliance.toLowerCase().includes(inputContent)) {
-                    globalResearchResult.push(recipes[recipeIndex])
-                };
+                    globalResearchResult.push(recipes[recipeIndex]);
+                }
 
                 //research into recipes ingredients
                 for (let ingredientsIndex = 0; ingredientsIndex < recipes[recipeIndex].ingredients.length; ingredientsIndex++) {
                     if (recipes[recipeIndex].ingredients[ingredientsIndex].ingredient.toLowerCase().includes(inputContent)) {
-                        globalResearchResult.push(recipes[recipeIndex])
+                        globalResearchResult.push(recipes[recipeIndex]);
                     }
                 }
 
                 //research into recipes ustensils
                 for (let ustensilsIndex = 0; ustensilsIndex < recipes[recipeIndex].ustensils.length; ustensilsIndex++) {
                     if (recipes[recipeIndex].ustensils[ustensilsIndex].toLowerCase().includes(inputContent)) {
-                        globalResearchResult.push(recipes[recipeIndex])
+                        globalResearchResult.push(recipes[recipeIndex]);
                     }
                 }
             }
 
             //remove duplicates
-            let newGlobalResearchResult = [...new Set(globalResearchResult)]
+            let newGlobalResearchResult = [...new Set(globalResearchResult)];
 
             //result
-            filteredRecipes = newGlobalResearchResult
+            filteredRecipes = newGlobalResearchResult;
         }
 
         if (selectedTags.length !== 0) {
