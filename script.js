@@ -95,7 +95,7 @@ function research(recipes) {
                     // verify if tag is into recipe appliance
                     if (recipe.appliance.toLowerCase().includes(tag)) {
                         return true;
-                    };
+                    }
 
                     // verify if tag is into recipe ingredients
                     let filteredRecipesIngredients = recipe.ingredients.filter(ingredient => {
@@ -113,10 +113,10 @@ function research(recipes) {
 
                     //https://stackoverflow.com/questions/49698136/es5-filter-inside-filter
                     if (filteredRecipesIngredients.length > 0 || filteredRecipesUstensils.length > 0) {
-                        return true
+                        return true;
                     }
-                    return false
-                })
+                    return false;
+                });
 
                 // verify that ALL the selected tag are in the recipe, if yes : display
                 if (filterForEachTag.every(verifyTagPresence)) {
@@ -125,9 +125,9 @@ function research(recipes) {
 
                 function verifyTagPresence(tag) {
                     if (tag === true) {
-                        return true
+                        return true;
                     }
-                    return false
+                    return false;
                 }
             });
         }
