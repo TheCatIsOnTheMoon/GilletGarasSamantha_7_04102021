@@ -111,7 +111,6 @@ function research(recipes) {
                         }
                     });
 
-                    //https://stackoverflow.com/questions/49698136/es5-filter-inside-filter
                     if (filteredRecipesIngredients.length > 0 || filteredRecipesUstensils.length > 0) {
                         return true;
                     }
