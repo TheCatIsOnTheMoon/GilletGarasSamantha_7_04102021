@@ -34,9 +34,10 @@
     <!-- MAIN -->
     <main>
         <section>
+            <h2 class="hidden-label"> Recherche</h2>
 
             <!-- GLOBAL SEARCH BAR -->
-            <form id="form-research-global" name="form-research-global" action="index.html" method="get" action="">
+            <form id="form-research-global" name="form-research-global" action="index.html" method="get">
                 <div id="main-searchbar">
                     <input type="text" id="main-research-input" name="main-research-input" minlength="3" maxlength="20"
                         size="10" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette">
@@ -63,7 +64,7 @@
                     </summary>
                     <div>
                         <form id="form-research-ingredients" name="form-research-ingredients" action="index.html"
-                            method="get" action="">
+                            method="get">
                             <input type="text" class="research-list-input secondary-color"
                                 id="ingredients-research-input" name="ingredients-research-input" minlength="3"
                                 maxlength="20" size="10" placeholder="Rechercher un ingrédient">
@@ -82,7 +83,7 @@
                     </summary>
                     <div>
                         <form id="form-research-appliances" name="form-research-appliances" action="index.html"
-                            method="get" action="">
+                            method="get">
                             <input type="text" class="research-list-input tertiary-color" id="appliances-research-input"
                                 name="appliances-research-input" minlength="3" maxlength="20" size="10"
                                 placeholder="Rechercher un appareil">
@@ -100,7 +101,7 @@
                     </summary>
                     <div>
                         <form id="form-research-ustensils" name="form-research-ustensils" action="index.html"
-                            method="get" action="">
+                            method="get">
                             <input type="text" class="research-list-input primary-color" id="ustensils-research-input"
                                 name="ustensils-research-input" minlength="3" maxlength="20" size="10"
                                 placeholder="Rechercher un ustensile">
@@ -116,11 +117,13 @@
 
         <!-- NO RESULT MESSAGE -->
         <article class="" id="no-result-message">
+            <h2 class="hidden-label"> Résultats de la recherche</h2>
             Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.
         </article>
 
         <!-- RECIPE DISPLAY -->
         <section id="section-results">
+            <h2 class="hidden-label"> Résultats de la recherche</h2>
             <!-- recipes -->
         </section>
 
